@@ -2,11 +2,13 @@
 let pixels = [];
 let pixels2 = [];
 let dots = [];
+let res = [30, 20];
 
 let files = [
-	'./data/cocosnoot.txt',
-	'./data/test1/json.txt'
+	'./data/30x40/test1.txt',
+	'./data/30x40/test2.txt'
 ];
+
 
 function loadJSON(fileName, callback) {   
 	var xobj = new XMLHttpRequest();
@@ -26,6 +28,7 @@ loadJSON(files[0], function(response) {
 		var actual_JSON = JSON.parse(response);
 
 		pixels = actual_JSON;
+		console.log('inited', pixels.length);
  });
 
  loadJSON(files[1], function(response) {
@@ -33,6 +36,7 @@ loadJSON(files[0], function(response) {
 		var actual_JSON = JSON.parse(response);
 
 		pixels2 = actual_JSON;
+		console.log('inited', pixels2.length);
  });
 
 window.onload = function() {
@@ -46,8 +50,8 @@ window.onload = function() {
 }
 
 function drawPicture(pic1, pos) {
-	var w = 60;
-	var h = 40;
+	var w = res[0];
+	var h = res[1];
 
 	var raster = new Raster(new Size(w, h));
 
