@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Test 1</title>
+</head>
+<body>
+	<img 
+		src="./terras-870x500.jpg" 
+		id="terras" 
+		style="display: none;"
+	>
+	<canvas id="canvas" resize></canvas>
+	
+	<script src="./node_modules/paper/dist/paper-full.min.js"></script>
+	<script>
+		var can = document.getElementById("canvas");
+		can.style.width = window.innerWidth+"px";
+		can.style.height = window.innerHeight+"px";
+		//Install paper to the global scope
+		paper.install(window)
+		paper.setup("canvas")
+	</script>
+	<script>
+		// Create a raster item using the image tag with id='mona'
+		var raster = new Raster('terras');
+
+		// Move the raster to the center of the view
+		raster.position = view.center;
+
+		// Create a circle shaped path at {x: 50, y: 50}
+		// with a radius of 30:
+		// var path = new Path.Circle({
+		// 	center: [window.innerWidth / 2, window.innerHeight / 2],
+		// 	radius: 30,
+		// 	strokeColor: 'white'
+		// });
+
+		var rect = new Rectangle(10, 20, 200, 100);
+
+		var tool = new Tool();
+
+		tool.onMouseMove = function(event) {
+			// Set the fill color of the path to the average color
+			// of the raster at the position of the mouse:
+			rect.fillColor = raster.getAverageColor(event.point);
+		}
+	</script>
+</body>
+</html>
