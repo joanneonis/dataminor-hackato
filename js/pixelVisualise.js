@@ -1,5 +1,7 @@
+let res = [30, 20];
+
 var can = document.getElementById("canvas");
-		can.style.width = window.innerWidth+"px";
+		can.style.width = (res[0] * 100)+"px";
 		can.style.height = window.innerHeight+"px";
 		//Install paper to the global scope
 		paper.install(window);
@@ -8,11 +10,17 @@ var can = document.getElementById("canvas");
 let pixels = [];
 let pixels2 = [];
 let dots = [];
-let res = [30, 20];
+
+let allPixels = [];
 
 let files = [
-	'./data/30x40/test1.txt',
-	'./data/30x40/test2.txt'
+	'./data/all/1.txt',
+	'./data/all/2.txt',
+	'./data/all/3.txt',
+	'./data/all/4.txt',
+	'./data/all/5.txt',
+	'./data/all/6.txt',
+	'./data/all/7.txt'
 ];
 
 
@@ -29,27 +37,19 @@ function loadJSON(fileName, callback) {
 	xobj.send(null);   
 }
 
-loadJSON(files[0], function(response) {
-  // Parse JSON string into object
-		var actual_JSON = JSON.parse(response);
-
-		pixels = actual_JSON;
-		console.log('inited', pixels.length);
- });
-
- loadJSON(files[1], function(response) {
-  // Parse JSON string into object
-		var actual_JSON = JSON.parse(response);
-
-		pixels2 = actual_JSON;
-		console.log('inited', pixels2.length);
- });
-
 window.onload = function() {
 	paper.setup("canvas")
+	
 
-	drawPicture(pixels, 0);
-	drawPicture(pixels2, 1); 
+	for (let l = 0; l < files.length; l++) {
+		loadJSON(files[l], function(response) {
+			// Parse JSON string into object
+				var actual_JSON = JSON.parse(response);
+		
+				allPixels[l] = actual_JSON;
+				drawPicture(allPixels[l], l); 
+		 });
+	}
 
 	// Move the active layer to the center of the view:
 	// project.activeLayer.position = view.center;
