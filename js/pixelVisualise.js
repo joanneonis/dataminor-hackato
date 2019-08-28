@@ -50,9 +50,6 @@ window.onload = function() {
 				drawPicture(allPixels[l], l); 
 		 });
 	}
-
-	// Move the active layer to the center of the view:
-	// project.activeLayer.position = view.center;
 }
 
 function drawPicture(pic1, pos) {
@@ -107,4 +104,19 @@ function compare(a, b) {
     comparison = -1;
   }
   return comparison;
+}
+
+var test = new Tool();
+
+var hitOptions = {
+	segments: false,
+	stroke: false,
+	fill: true,
+	tolerance: 2
+};
+
+test.onMouseDown = function(event) {
+	var hitResult = project.hitTest(event.point, hitOptions);
+
+	hitResult.item.fillColor = 'green';
 }
