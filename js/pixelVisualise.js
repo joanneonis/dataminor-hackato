@@ -1,3 +1,9 @@
+var can = document.getElementById("canvas");
+		can.style.width = window.innerWidth+"px";
+		can.style.height = window.innerHeight+"px";
+		//Install paper to the global scope
+		paper.install(window);
+
 // copy pixels (for sorting later on)
 let pixels = [];
 let pixels2 = [];
