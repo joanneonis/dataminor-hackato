@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Visualise</title>
+</head>
+<body>
+	<canvas id="canvas" resize></canvas>
+	
+	<script src="./node_modules/paper/dist/paper-full.min.js"></script>
+	<script>
+
+		var can = document.getElementById("canvas");
+		can.style.width = window.innerWidth+"px";
+		can.style.height = window.innerHeight+"px";
+		//Install paper to the global scope
+		paper.install(window);
+
+	</script>
+
+	<script src="./js/pixelSorting.js"></script>
+</body>
+</html>

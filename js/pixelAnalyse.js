@@ -1,33 +1,12 @@
 // copy pixels (for sorting later on)
-let pixels = [];
+let pixels = {};
 let dots = [];
-
-function loadJSON(callback) {   
-	var xobj = new XMLHttpRequest();
-			xobj.overrideMimeType("application/json");
-	xobj.open('GET', './data/test1/json.txt', true); // Replace 'my_data' with the path to your file
-	xobj.onreadystatechange = function () {
-				if (xobj.readyState == 4 && xobj.status == "200") {
-					// Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-					callback(xobj.responseText);
-				}
-	};
-	xobj.send(null);  
-}
-
-loadJSON(function(response) {
-  // Parse JSON string into object
-		var actual_JSON = JSON.parse(response);
-		console.log('loaded', actual_JSON);
-
-		pixels = actual_JSON;
- });
 
 window.onload = function() {
 	paper.setup("canvas")
 
 	// Create a raster item using the image tag with id='mona'
-	var raster = new Raster(new Size(60, 40), view.center);
+	var raster = new Raster('terras');
 
 	// Move the raster to the center of the view
 	// raster.position = view.center;
@@ -48,19 +27,26 @@ window.onload = function() {
 
 		let i = 0;
 
-		//! Saving for later
-		// pixels.sort(compare);
-
 		for (var y = 0; y < raster.height; y++) {
 			for(var x = 0; x < raster.width; x++) {
-				dots[i] = new Path.Rectangle(x * gridSize, y * gridSize, gridSize / spacing, gridSize / spacing);
-				// Set the fill color of the path to the color
-				// of the pixel:
-				dots[i].fillColor = pixels[i];
+				// Get the color of the pixel:
+				var color = raster.getPixel(x, y);
 
+				pixels[i] = color;
+
+				// Create a circle shaped path:
+				// dots[i] = new Path.Circle({
+				// 	center: new Point(x * gridSize, y * gridSize),
+				// 	radius: gridSize / 2 / spacing
+				// });
+
+				dots[i] = new Path.Rectangle(x * gridSize, y * gridSize, gridSize / spacing, gridSize / spacing);
+				dots[i].fillColor = pixels[i];
 				i++;
 			}
 		}
+
+		console.log(pixels);
 
 		// Move the active layer to the center of the view, so all 
 		// the created paths in it appear centered.
@@ -72,13 +58,31 @@ window.onload = function() {
 	project.activeLayer.position = view.center;
 }
 
-function compare(a, b) {
-	let comparison = 0;
+//! 
+// function compare(a, b) {
+// 	let comparison = 0;
 	
-  if (a.hue > b.hue) {
-    comparison = 1;
-  } else if (a.hue < b.hue) {
-    comparison = -1;
-  }
-  return comparison;
+//   if (a.hue > b.hue) {
+//     comparison = 1;
+//   } else if (a.hue < b.hue) {
+//     comparison = -1;
+//   }
+//   return comparison;
+// }
+//!
+
+document.getElementById("save").addEventListener("click", (e) => {
+	var pixelsRaw = JSON.stringify(pixels);
+
+	console.log(pixelsRaw);
+	// var pixelsSorted = 
+	// download(pixelsRaw, 'json.txt', 'text/plain');
+});
+
+function download(content, fileName, contentType) {
+	var a = document.createElement("a");
+	var file = new Blob([content], {type: contentType});
+	a.href = URL.createObjectURL(file);
+	a.download = fileName;
+	a.click();
 }
