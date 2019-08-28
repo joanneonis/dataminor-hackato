@@ -23,7 +23,7 @@ window.onload = function() {
 		// Since the example image we're using is much too large,
 		// and therefore has way too many pixels, lets downsize it to
 		// 40 pixels wide and 30 pixels high:
-		raster.size = new Size(60, 40);
+		raster.size = new Size(30, 20);
 
 		let i = 0;
 
@@ -70,3 +70,17 @@ window.onload = function() {
 //   return comparison;
 // }
 //!
+
+document.getElementById("save").addEventListener("click", (e) => {
+	var pixelsRaw = JSON.stringify(pixels);
+	// var pixelsSorted = 
+	download(pixelsRaw, 'json.txt', 'text/plain');
+});
+
+function download(content, fileName, contentType) {
+	var a = document.createElement("a");
+	var file = new Blob([content], {type: contentType});
+	a.href = URL.createObjectURL(file);
+	a.download = fileName;
+	a.click();
+}
