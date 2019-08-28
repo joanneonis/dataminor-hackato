@@ -14,7 +14,8 @@ window.onload = function() {
 	var spacing = 1.2;
 
 	// copy pixels (for sorting later on)
-	let pixels = []
+	let pixels = [];
+	let dots = [];
 
 	// As the web is asynchronous, we need to wait for the raster to load
 	// before we can perform any operation on its pixels.
@@ -34,14 +35,26 @@ window.onload = function() {
 				pixels[i] = color;
 
 				// Create a circle shaped path:
-				var path = new Path.Circle({
-					center: new Point(x * gridSize, y * gridSize),
-					radius: gridSize / 2 / spacing
-				});
+				// dots[i] = new Path.Circle({
+				// 	center: new Point(x * gridSize, y * gridSize),
+				// 	radius: gridSize / 2 / spacing
+				// });
 
+				dots[i] = new Path.Rectangle(x * gridSize, y * gridSize, gridSize / spacing, gridSize / spacing);
+
+				i++;
+			}
+		}
+
+		i = 0;
+
+		pixels.sort(compare);
+
+		for (var y = 0; y < raster.height; y++) {
+			for(var x = 0; x < raster.width; x++) {
 				// Set the fill color of the path to the color
 				// of the pixel:
-				path.fillColor = color;
+				dots[i].fillColor = pixels[i];
 
 				i++;
 			}
@@ -56,4 +69,15 @@ window.onload = function() {
 
 	// Move the active layer to the center of the view:
 	project.activeLayer.position = view.center;
+}
+
+function compare(a, b) {
+	let comparison = 0;
+	
+  if (a.hue > b.hue) {
+    comparison = 1;
+  } else if (a.hue < b.hue) {
+    comparison = -1;
+  }
+  return comparison;
 }
