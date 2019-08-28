@@ -1,3 +1,7 @@
+// copy pixels (for sorting later on)
+let pixels = [];
+let dots = [];
+
 window.onload = function() {
 	paper.setup("canvas")
 
@@ -12,10 +16,6 @@ window.onload = function() {
 
 	// Space the cells by 120%:
 	var spacing = 1.2;
-
-	// copy pixels (for sorting later on)
-	let pixels = [];
-	let dots = [];
 
 	// As the web is asynchronous, we need to wait for the raster to load
 	// before we can perform any operation on its pixels.
@@ -48,7 +48,8 @@ window.onload = function() {
 
 		i = 0;
 
-		pixels.sort(compare);
+		//! Saving for later
+		// pixels.sort(compare);
 
 		for (var y = 0; y < raster.height; y++) {
 			for(var x = 0; x < raster.width; x++) {
@@ -80,4 +81,19 @@ function compare(a, b) {
     comparison = -1;
   }
   return comparison;
+}
+
+
+document.getElementById("save").addEventListener("click", (e) => {
+	var pixelsRaw = JSON.stringify(pixels);
+	// var pixelsSorted = 
+	download(pixelsRaw, 'json.txt', 'text/plain');
+});
+
+function download(content, fileName, contentType) {
+	var a = document.createElement("a");
+	var file = new Blob([content], {type: contentType});
+	a.href = URL.createObjectURL(file);
+	a.download = fileName;
+	a.click();
 }
