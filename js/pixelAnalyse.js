@@ -1,5 +1,5 @@
 // copy pixels (for sorting later on)
-let pixels = {};
+let pixels = [];
 let dots = [];
 
 window.onload = function() {
@@ -46,7 +46,7 @@ window.onload = function() {
 			}
 		}
 
-		console.log(pixels);
+		// console.log(pixels);
 
 		// Move the active layer to the center of the view, so all 
 		// the created paths in it appear centered.
@@ -70,19 +70,3 @@ window.onload = function() {
 //   return comparison;
 // }
 //!
-
-document.getElementById("save").addEventListener("click", (e) => {
-	var pixelsRaw = JSON.stringify(pixels);
-
-	console.log(pixelsRaw);
-	// var pixelsSorted = 
-	// download(pixelsRaw, 'json.txt', 'text/plain');
-});
-
-function download(content, fileName, contentType) {
-	var a = document.createElement("a");
-	var file = new Blob([content], {type: contentType});
-	a.href = URL.createObjectURL(file);
-	a.download = fileName;
-	a.click();
-}

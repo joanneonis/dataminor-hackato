@@ -56,8 +56,8 @@ window.onload = function() {
 				dots[i] = new Path.Rectangle(x * gridSize, y * gridSize, gridSize / spacing, gridSize / spacing);
 				// Set the fill color of the path to the color
 				// of the pixel:
-				dots[i].fillColor = pixels[i];
-
+				dots[i].fillColor = new Color(pixels[i][1], pixels[i][2], pixels[i][3]);
+		
 				i++;
 			}
 		}
