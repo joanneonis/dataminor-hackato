@@ -11,16 +11,20 @@
 	<style>
 		.current {
 			position: fixed;
-			bottom: 20px;
+			bottom: 30px;
 		}
 	</style>
 </head>
 
 <body>
-	<canvas id="canvas" resize></canvas>
-
-	<div class="current">
-
+	<div class="container">
+		<div class="info">
+			<span>De kleuren van</span>
+			<h3>Witte de Withstraat</h3>
+		</div>
+		<canvas id="canvas" resize></canvas>
+	
+		<div class="current"></div>
 	</div>
 
 	<script src="./node_modules/paper/dist/paper-full.min.js"></script>
