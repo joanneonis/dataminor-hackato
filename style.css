@@ -1,0 +1,22 @@
+body {
+	font-family: sans-serif;
+	background: #151619;
+	color: #fff;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	max-width: none;
+	width: 6300px;
+}
+
+li {
+	width: 300px;
+	margin-right: 10px;
+}

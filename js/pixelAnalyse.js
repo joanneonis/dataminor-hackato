@@ -56,6 +56,8 @@ window.onload = function() {
 
 	// Move the active layer to the center of the view:
 	project.activeLayer.position = view.center;
+
+	console.log(pixels);
 }
 
 //! 
