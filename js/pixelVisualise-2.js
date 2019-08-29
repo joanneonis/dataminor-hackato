@@ -2,7 +2,7 @@ let res = [30, 20];
 
 const bars = [
 	{
-		id: 1,
+		id: 0,
 		title: "Ben & Jerry’s",
 		capacity: 0,
 		colors: ['#333', '#000', '#fff'],
@@ -30,7 +30,7 @@ const bars = [
 		],
 	},
 	{
-		id: 2,
+		id: 1,
 		title: "BierBoutique",
 		capacity: 51,
 		colors: ['#333', '#000', '#fff'],
@@ -58,7 +58,7 @@ const bars = [
 		],
 	},
 	{
-		id: 3,
+		id: 2,
 		title: "Cocosnoot Shoarma",
 		capacity: 16,
 		colors: ['#333', '#000', '#fff'],
@@ -86,7 +86,7 @@ const bars = [
 		],
 	},
 	{
-		id: 4,
+		id: 3,
 		title: "Switie",
 		capacity: 15,
 		colors: ['#333', '#000', '#fff'],
@@ -114,7 +114,7 @@ const bars = [
 		],
 	},
 	{
-		id: 5,
+		id: 4,
 		title: "Het Eigendom",
 		capacity: 35,
 		colors: ['#333', '#000', '#fff'],
@@ -142,7 +142,7 @@ const bars = [
 		],
 	},
 	{
-		id: 6,
+		id: 5,
 		title: "Warungmini",
 		capacity: 28,
 		colors: ['#333', '#000', '#fff'],
@@ -170,7 +170,7 @@ const bars = [
 		],
 	},
 	{
-		id: 7,
+		id: 6,
 		title: "OPA",
 		capacity: 50,
 		colors: ['#333', '#000', '#fff'],
@@ -198,7 +198,7 @@ const bars = [
 		],
 	},
 	{
-		id: 8,
+		id: 7,
 		title: "Jaffa shoarma",
 		capacity: 31,
 		colors: ['#333', '#000', '#fff'],
@@ -226,7 +226,7 @@ const bars = [
 		],
 	},
 	{
-		id: 9,
+		id: 8,
 		title: "Satebar",
 		capacity: 0,
 		colors: ['#333', '#000', '#fff'],
@@ -254,7 +254,7 @@ const bars = [
 		],
 	},
 	{
-		id: 11,
+		id: 9,
 		title: "Wunderbar",
 		capacity: 65,
 		colors: ['#333', '#000', '#fff'],
@@ -282,7 +282,7 @@ const bars = [
 		],
 	},
 	{
-		id: 12,
+		id: 10,
 		title: "Frietboutique",
 		capacity: 30,
 		colors: ['#333', '#000', '#fff'],
@@ -310,7 +310,7 @@ const bars = [
 		],
 	},
 	{
-		id: 13,
+		id: 11,
 		title: "Termarsch & CO",
 		capacity: 0,
 		colors: ['#333', '#000', '#fff'],
@@ -338,7 +338,7 @@ const bars = [
 		],
 	},
 	{
-		id: 14,
+		id: 12,
 		title: "King Kong",
 		capacity: 52,
 		colors: ['#333', '#000', '#fff'],
@@ -366,7 +366,7 @@ const bars = [
 		],
 	},
 	{
-		id: 15,
+		id: 13,
 		title: "NRC",
 		capacity: 52,
 		colors: ['#333', '#000', '#fff'],
@@ -394,7 +394,7 @@ const bars = [
 		],
 	},
 	{
-		id: 16,
+		id: 14,
 		title: "De Witte Aap",
 		capacity: 63,
 		colors: ['#333', '#000', '#fff'],
@@ -422,7 +422,7 @@ const bars = [
 		],
 	},
 	{
-		id: 17,
+		id: 15,
 		title: "De Schouw",
 		capacity: 36,
 		colors: ['#333', '#000', '#fff'],
@@ -450,7 +450,7 @@ const bars = [
 		],
 	},
 	{
-		id: 18,
+		id: 16,
 		title: "Telaviv",
 		capacity: 12,
 		colors: ['#333', '#000', '#fff'],
@@ -478,7 +478,7 @@ const bars = [
 		],
 	},
 	{
-		id: 19,
+		id: 17,
 		title: "De With",
 		capacity: 0,
 		colors: ['#333', '#000', '#fff'],
@@ -506,7 +506,7 @@ const bars = [
 		],
 	},
 	{
-		id: 20,
+		id: 18,
 		title: "Wagamama",
 		capacity: 94,
 		colors: ['#333', '#000', '#fff'],
@@ -534,7 +534,7 @@ const bars = [
 		],
 	},
 	{
-		id: 21,
+		id: 19,
 		title: "Zondebok & Zwarte schaap",
 		capacity: 90,
 		colors: ['#333', '#000', '#fff'],
@@ -734,7 +734,7 @@ function drawPictureWhole(count) {
 			var theColor = allPixels[count].colors[i];
 			
 			dots[i].fillColor = new Color(theColor[1], theColor[2], theColor[3]);
-			dots[i].userData = { title: allPixels[count].title, id: allPixels[count].id };
+			dots[i].userData = { title: allPixels[count].title, id: allPixels[count].id }; //? ID gaat te hoog
 
 			if (i % 100 === 0) {
 				round += 1;
@@ -772,14 +772,18 @@ function bigAssRaster(count) {
 			);
 
 			var theColor = sortablePixels[iAll];
+			var theRoundId = Math.round(sortablePixels[iAll][5]);
 			
 			dots[i].fillColor = new Color(theColor[1], theColor[2], theColor[3]);
-			dots[i].OldfillColor = new Color(theColor[1], theColor[2], theColor[3]);
-			dots[i].userData = { title: allPixels[round].title, id: allPixels[round].id, colorValues: allPixels[round].colorValues };
+			dots[i].userData = { title: allPixels[round].title, id: allPixels[round].id, num: sortablePixels[iAll][5]};
+
+			//? round vervangen door theColor[5]
 
 			paperPixels.push(dots[i]);
 
-			allPixels[round].paperPixels.push(iAll);
+			if (theRoundId < 19) { //! todo! 
+				allPixels[theRoundId].paperPixels.push(iAll);
+			} 
 
 			if (i === allPixels[round].colors.length - 1) {
 				round += 1;
@@ -882,6 +886,7 @@ test.onMouseDown = function(event) {
 	};
 
 	let id = hitResult.item.userData.id;
+	console.log(allPixels[id].paperPixels);
 
 	for (let i = 0; i < paperPixels.length; i++) {
 		if (!allPixels[id].paperPixels.includes(i)) {
