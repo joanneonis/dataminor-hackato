@@ -4,87 +4,547 @@ const bars = [
 	{
 		id: 1,
 		title: "Ben & Jerry’s",
+		capacity: 0,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 0,
+			},
+			{
+				time: '14:30',
+				visitors: 0,
+			},
+			{
+				time: '15:30',
+				visitors: 0,
+			},
+			{
+				time: '16:30',
+				visitors: 0,
+			},
+			{
+				time: '17:30',
+				visitors: 0,
+			},
+		],
 	},
 	{
 		id: 2,
-		title: "Boutique",
+		title: "BierBoutique",
+		capacity: 51,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 0,
+			},
+			{
+				time: '14:30',
+				visitors: 0,
+			},
+			{
+				time: '15:30',
+				visitors: 0,
+			},
+			{
+				time: '16:30',
+				visitors: 0,
+			},
+			{
+				time: '17:30',
+				visitors: 0,
+			},
+		],
 	},
 	{
 		id: 3,
 		title: "Cocosnoot Shoarma",
+		capacity: 16,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 0,
+			},
+			{
+				time: '14:30',
+				visitors: 0,
+			},
+			{
+				time: '15:30',
+				visitors: 0,
+			},
+			{
+				time: '16:30',
+				visitors: 3,
+			},
+			{
+				time: '17:30',
+				visitors: 0,
+			},
+		],
 	},
 	{
 		id: 4,
 		title: "Switie",
+		capacity: 15,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 0,
+			},
+			{
+				time: '14:30',
+				visitors: 0,
+			},
+			{
+				time: '15:30',
+				visitors: 0,
+			},
+			{
+				time: '16:30',
+				visitors: 1,
+			},
+			{
+				time: '17:30',
+				visitors: 0,
+			},
+		],
 	},
 	{
 		id: 5,
 		title: "Het Eigendom",
+		capacity: 35,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 0,
+			},
+			{
+				time: '14:30',
+				visitors: 1,
+			},
+			{
+				time: '15:30',
+				visitors: 4,
+			},
+			{
+				time: '16:30',
+				visitors: 14,
+			},
+			{
+				time: '17:30',
+				visitors: 15,
+			},
+		],
 	},
 	{
 		id: 6,
 		title: "Warungmini",
+		capacity: 28,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 14,
+			},
+			{
+				time: '14:30',
+				visitors: 23,
+			},
+			{
+				time: '15:30',
+				visitors: 11,
+			},
+			{
+				time: '16:30',
+				visitors: 12,
+			},
+			{
+				time: '17:30',
+				visitors: 23,
+			},
+		],
 	},
 	{
 		id: 7,
 		title: "OPA",
+		capacity: 50,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 0,
+			},
+			{
+				time: '14:30',
+				visitors: 0,
+			},
+			{
+				time: '15:30',
+				visitors: 0,
+			},
+			{
+				time: '16:30',
+				visitors: 6,
+			},
+			{
+				time: '17:30',
+				visitors: 9,
+			},
+		],
 	},
 	{
 		id: 8,
 		title: "Jaffa shoarma",
+		capacity: 31,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 13,
+			},
+			{
+				time: '14:30',
+				visitors: 12,
+			},
+			{
+				time: '15:30',
+				visitors: 19,
+			},
+			{
+				time: '16:30',
+				visitors: 10,
+			},
+			{
+				time: '17:30',
+				visitors: 3,
+			},
+		],
 	},
 	{
 		id: 9,
 		title: "Satebar",
+		capacity: 0,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 0,
+			},
+			{
+				time: '14:30',
+				visitors: 0,
+			},
+			{
+				time: '15:30',
+				visitors: 0,
+			},
+			{
+				time: '16:30',
+				visitors: 0,
+			},
+			{
+				time: '17:30',
+				visitors: 0,
+			},
+		],
 	},
 	{
 		id: 11,
 		title: "Wunderbar",
+		capacity: 65,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 0,
+			},
+			{
+				time: '14:30',
+				visitors: 18,
+			},
+			{
+				time: '15:30',
+				visitors: 39,
+			},
+			{
+				time: '16:30',
+				visitors: 38,
+			},
+			{
+				time: '17:30',
+				visitors: 33,
+			},
+		],
 	},
 	{
 		id: 12,
 		title: "Frietboutique",
+		capacity: 30,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 11,
+			},
+			{
+				time: '14:30',
+				visitors: 2,
+			},
+			{
+				time: '15:30',
+				visitors: 3,
+			},
+			{
+				time: '16:30',
+				visitors: 2,
+			},
+			{
+				time: '17:30',
+				visitors: 8,
+			},
+		],
 	},
 	{
 		id: 13,
 		title: "Termarsch & CO",
+		capacity: 0,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 0,
+			},
+			{
+				time: '14:30',
+				visitors: 0,
+			},
+			{
+				time: '15:30',
+				visitors: 0,
+			},
+			{
+				time: '16:30',
+				visitors: 0,
+			},
+			{
+				time: '17:30',
+				visitors: 0,
+			},
+		],
 	},
 	{
 		id: 14,
 		title: "King Kong",
+		capacity: 52,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 32,
+			},
+			{
+				time: '14:30',
+				visitors: 35,
+			},
+			{
+				time: '15:30',
+				visitors: 14,
+			},
+			{
+				time: '16:30',
+				visitors: 24,
+			},
+			{
+				time: '17:30',
+				visitors: 13,
+			},
+		],
 	},
 	{
 		id: 15,
 		title: "NRC",
+		capacity: 52,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 61,
+			},
+			{
+				time: '14:30',
+				visitors: 46,
+			},
+			{
+				time: '15:30',
+				visitors: 30,
+			},
+			{
+				time: '16:30',
+				visitors: 34,
+			},
+			{
+				time: '17:30',
+				visitors: 35,
+			},
+		],
 	},
 	{
 		id: 16,
 		title: "De Witte Aap",
+		capacity: 63,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 0,
+			},
+			{
+				time: '14:30',
+				visitors: 1,
+			},
+			{
+				time: '15:30',
+				visitors: 14,
+			},
+			{
+				time: '16:30',
+				visitors: 42,
+			},
+			{
+				time: '17:30',
+				visitors: 45,
+			},
+		],
 	},
 	{
 		id: 17,
 		title: "De Schouw",
+		capacity: 36,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 0,
+			},
+			{
+				time: '14:30',
+				visitors: 0,
+			},
+			{
+				time: '15:30',
+				visitors: 2,
+			},
+			{
+				time: '16:30',
+				visitors: 7,
+			},
+			{
+				time: '17:30',
+				visitors: 5,
+			},
+		],
 	},
 	{
 		id: 18,
-		title: "?? Kebab",
+		title: "Telaviv",
+		capacity: 12,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 0,
+			},
+			{
+				time: '14:30',
+				visitors: 2,
+			},
+			{
+				time: '15:30',
+				visitors: 0,
+			},
+			{
+				time: '16:30',
+				visitors: 2,
+			},
+			{
+				time: '17:30',
+				visitors: 2,
+			},
+		],
 	},
 	{
 		id: 19,
 		title: "De With",
+		capacity: 0,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 0,
+			},
+			{
+				time: '14:30',
+				visitors: 0,
+			},
+			{
+				time: '15:30',
+				visitors: 0,
+			},
+			{
+				time: '16:30',
+				visitors: 0,
+			},
+			{
+				time: '17:30',
+				visitors: 12,
+			},
+		],
 	},
 	{
 		id: 20,
 		title: "Wagamama",
+		capacity: 94,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 23,
+			},
+			{
+				time: '14:30',
+				visitors: 10,
+			},
+			{
+				time: '15:30',
+				visitors: 2,
+			},
+			{
+				time: '16:30',
+				visitors: 7,
+			},
+			{
+				time: '17:30',
+				visitors: 26,
+			},
+		],
 	},
 	{
 		id: 21,
 		title: "Zondebok & Zwarte schaap",
+		capacity: 90,
+		visitors: [
+			{
+				time: '13:30',
+				visitors: 0,
+			},
+			{
+				time: '14:30',
+				visitors: 2,
+			},
+			{
+				time: '15:30',
+				visitors: 7,
+			},
+			{
+				time: '16:30',
+				visitors: 15,
+			},
+			{
+				time: '17:30',
+				visitors: 24,
+			},
+		],
 	},
 ];
 
 var can = document.getElementById("canvas");
-		can.style.width = (res[0] * 210)+"px";
+		can.style.width = window.innerWidth+"px";
 		can.style.height = window.innerHeight+"px"; //window.innerHeight
 		//Install paper to the global scope
 		paper.install(window);
@@ -119,6 +579,8 @@ let files = [
 	'./data/all/21.txt'
 ];
 
+let sortablePixels = [];
+let paperPixels = [];
 
 function loadJSON(fileName, callback) {   
 	var xobj = new XMLHttpRequest();
@@ -158,8 +620,13 @@ window.onload = function() {
 			allPixels[l] = {
 				title: bars[l].title,
 				id: bars[l].id,
-				colors: actual_JSON
+				colors: actual_JSON,
+				paperPixels: [],
 			};
+
+			sortablePixels.push(...actual_JSON);
+
+			calculateColorValues(l);
 			bigAssRaster(l); 
 		});
 	}
@@ -261,15 +728,18 @@ function drawPictureWhole(count) {
 function bigAssRaster(count) {
 	if (count < files.length - 1) return;
 
+	console.log(sortablePixels);
+
 	var w = res[0];
 	var h = res[1];
 	var raster = new Raster(new Size(w, h));
 	var gridSize = 7;
 	var spacing = 1.1;
 	let i = 0;
+	let iAll = 0;
 
 	//! Saving for later
-	// pic1.sort(compare);
+	sortablePixels.sort(compare);
 
 	let round = 0;
 
@@ -282,10 +752,15 @@ function bigAssRaster(count) {
 				gridSize / spacing
 			);
 
-			var theColor = allPixels[round].colors[i];
+			var theColor = sortablePixels[iAll];
 			
 			dots[i].fillColor = new Color(theColor[1], theColor[2], theColor[3]);
-			dots[i].userData = { title: allPixels[round].title, id: allPixels[round].id };
+			dots[i].OldfillColor = new Color(theColor[1], theColor[2], theColor[3]);
+			dots[i].userData = { title: allPixels[round].title, id: allPixels[round].id, colorValues: allPixels[round].colorValues };
+
+			paperPixels.push(dots[i]);
+
+			allPixels[round].paperPixels.push(iAll);
 
 			if (i === allPixels[round].colors.length - 1) {
 				round += 1;
@@ -293,6 +768,8 @@ function bigAssRaster(count) {
 			} else {
 				i++;
 			}
+
+			iAll++;
 		}
 	}
 }
@@ -333,5 +810,79 @@ test.onMouseMove = function(event) {
 		return;
 	};
 
-	label.innerHTML = hitResult.item.userData.title;
+	label.innerHTML = `
+		<h3>${hitResult.item.userData.title}</h3>
+		<ul>
+			<li>
+				<strong>13:30 - </strong>
+				<span> Aantal: ${bars[hitResult.item.userData.id].visitors[0].visitors}</span>
+			</li>
+			<li>
+				<strong>14:30 - </strong>
+				<span> Aantal: ${bars[hitResult.item.userData.id].visitors[1].visitors}</span>
+			</li>
+			<li>
+				<strong>15:30 - </strong>
+				<span> Aantal: ${bars[hitResult.item.userData.id].visitors[2].visitors}</span>
+			</li>
+			<li>
+				<strong>16:30 - </strong>
+				<span> Aantal: ${bars[hitResult.item.userData.id].visitors[3].visitors}</span>
+			</li>
+			<li>
+				<strong>17:30 - </strong>
+				<span> Aantal: ${bars[hitResult.item.userData.id].visitors[4].visitors}</span>
+			</li>
+		</ul>
+	`;
+}
+
+// test.onMouseDown = function(event) {
+// 	var hitResult = project.hitTest(event.point, hitOptions);
+
+// 	// clean
+// 	for (let i = 0; i < paperPixels.length; i++) {
+// 		paperPixels[i].fillColor.alpha = 1;
+// 	}
+
+// 	if (!hitResult) {
+// 		return;
+// 	};
+
+// 	let id = hitResult.item.userData.id;
+
+// 	// allPixels
+	
+// 	for (let i = 0; i < paperPixels.length; i++) {
+// 		if (!allPixels[id].paperPixels.includes(i)) {
+// 			paperPixels[i].fillColor.alpha = .2;
+// 		}
+// 	}
+// 	// OldfillColor
+// 	console.log(hitResult.item.userData.id);	
+// }
+
+function calculateColorValues(round) {
+	let colors = allPixels[round].colors;
+
+	let reds = 0;
+	let blues = 0;
+	let greens = 0;
+
+	for (let i = 0; i < colors.length; i++) {
+		reds += colors[i][1];
+		greens += colors[i][2];
+		blues += colors[i][3];
+	}
+
+	allPixels[round].colorValues = {
+		red: reds,
+		green: greens,
+		blue: blues,
+	};
+
+	// let redValues = colors.filter((item) => {
+  //   return item.date.getTime() >= fromDate.getTime() &&
+  //          item.date.getTime() <= toDate.getTime();
+	// });
 }
