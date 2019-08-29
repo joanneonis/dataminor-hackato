@@ -814,24 +814,24 @@ test.onMouseMove = function(event) {
 		<h3>${hitResult.item.userData.title}</h3>
 		<ul>
 			<li>
-				<strong>13:30 - </strong>
-				<span> Aantal: ${bars[hitResult.item.userData.id].visitors[0].visitors}</span>
+				<strong>13:30 </strong>
+				<span> Bezoekers: ${bars[hitResult.item.userData.id].visitors[0].visitors}</span>
 			</li>
 			<li>
-				<strong>14:30 - </strong>
-				<span> Aantal: ${bars[hitResult.item.userData.id].visitors[1].visitors}</span>
+				<strong>14:30 </strong>
+				<span> Bezoekers: ${bars[hitResult.item.userData.id].visitors[1].visitors}</span>
 			</li>
 			<li>
-				<strong>15:30 - </strong>
-				<span> Aantal: ${bars[hitResult.item.userData.id].visitors[2].visitors}</span>
+				<strong>15:30 </strong>
+				<span> Bezoekers: ${bars[hitResult.item.userData.id].visitors[2].visitors}</span>
 			</li>
 			<li>
-				<strong>16:30 - </strong>
-				<span> Aantal: ${bars[hitResult.item.userData.id].visitors[3].visitors}</span>
+				<strong>16:30 </strong>
+				<span> Bezoekers: ${bars[hitResult.item.userData.id].visitors[3].visitors}</span>
 			</li>
 			<li>
-				<strong>17:30 - </strong>
-				<span> Aantal: ${bars[hitResult.item.userData.id].visitors[4].visitors}</span>
+				<strong>17:30 </strong>
+				<span> Bezoekers: ${bars[hitResult.item.userData.id].visitors[4].visitors}</span>
 			</li>
 		</ul>
 	`;
