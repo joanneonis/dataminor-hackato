@@ -1,5 +1,5 @@
 body {
-	font-family: sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 	background: #151619;
 	color: #fff;
 	margin: 0;
@@ -48,4 +48,23 @@ li {
 	display: block;
 	font-weight: 100;
 	opacity: .6;
+}
+
+.current .colors {
+	display: flex;
+	align-items: center;
+}
+
+
+.current .colors span {
+	width: 20px;
+	height: 20px;
+	border-radius: 50px;
+	display: inline-block;
+	opacity: 1;
+}
+
+.colors label {
+	margin-left: 10px;
+	font-size: 12px;
 }

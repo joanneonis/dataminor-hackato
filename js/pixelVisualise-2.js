@@ -5,6 +5,7 @@ const bars = [
 		id: 1,
 		title: "Ben & Jerry’s",
 		capacity: 0,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -32,6 +33,7 @@ const bars = [
 		id: 2,
 		title: "BierBoutique",
 		capacity: 51,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -59,6 +61,7 @@ const bars = [
 		id: 3,
 		title: "Cocosnoot Shoarma",
 		capacity: 16,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -86,6 +89,7 @@ const bars = [
 		id: 4,
 		title: "Switie",
 		capacity: 15,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -113,6 +117,7 @@ const bars = [
 		id: 5,
 		title: "Het Eigendom",
 		capacity: 35,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -140,6 +145,7 @@ const bars = [
 		id: 6,
 		title: "Warungmini",
 		capacity: 28,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -167,6 +173,7 @@ const bars = [
 		id: 7,
 		title: "OPA",
 		capacity: 50,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -194,6 +201,7 @@ const bars = [
 		id: 8,
 		title: "Jaffa shoarma",
 		capacity: 31,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -221,6 +229,7 @@ const bars = [
 		id: 9,
 		title: "Satebar",
 		capacity: 0,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -248,6 +257,7 @@ const bars = [
 		id: 11,
 		title: "Wunderbar",
 		capacity: 65,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -275,6 +285,7 @@ const bars = [
 		id: 12,
 		title: "Frietboutique",
 		capacity: 30,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -302,6 +313,7 @@ const bars = [
 		id: 13,
 		title: "Termarsch & CO",
 		capacity: 0,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -329,6 +341,7 @@ const bars = [
 		id: 14,
 		title: "King Kong",
 		capacity: 52,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -356,6 +369,7 @@ const bars = [
 		id: 15,
 		title: "NRC",
 		capacity: 52,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -383,6 +397,7 @@ const bars = [
 		id: 16,
 		title: "De Witte Aap",
 		capacity: 63,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -410,6 +425,7 @@ const bars = [
 		id: 17,
 		title: "De Schouw",
 		capacity: 36,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -437,6 +453,7 @@ const bars = [
 		id: 18,
 		title: "Telaviv",
 		capacity: 12,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -464,6 +481,7 @@ const bars = [
 		id: 19,
 		title: "De With",
 		capacity: 0,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -491,6 +509,7 @@ const bars = [
 		id: 20,
 		title: "Wagamama",
 		capacity: 94,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -518,6 +537,7 @@ const bars = [
 		id: 21,
 		title: "Zondebok & Zwarte schaap",
 		capacity: 90,
+		colors: ['#333', '#000', '#fff'],
 		visitors: [
 			{
 				time: '13:30',
@@ -692,7 +712,7 @@ function drawPictureWhole(count) {
 	let i = 0;
 
 	//! Saving for later
-	// pic1.sort(compare);
+	pic1.sort(compare);
 
 	let fullImgSpacing = 10;
 	let round = 0;
@@ -728,8 +748,6 @@ function drawPictureWhole(count) {
 function bigAssRaster(count) {
 	if (count < files.length - 1) return;
 
-	console.log(sortablePixels);
-
 	var w = res[0];
 	var h = res[1];
 	var raster = new Raster(new Size(w, h));
@@ -738,7 +756,8 @@ function bigAssRaster(count) {
 	let i = 0;
 	let iAll = 0;
 
-	//! Saving for later
+	//! order
+	addId();
 	sortablePixels.sort(compare);
 
 	let round = 0;
@@ -812,6 +831,12 @@ test.onMouseMove = function(event) {
 
 	label.innerHTML = `
 		<h3>${hitResult.item.userData.title}</h3>
+		<div class="colors">
+			<span style="background-color: ${bars[hitResult.item.userData.id].colors[0]}"></span>
+			<span style="background-color: ${bars[hitResult.item.userData.id].colors[1]}"></span>
+			<span style="background-color: ${bars[hitResult.item.userData.id].colors[2]}"></span>
+			<label>Meest opvallende kleuren</label>
+		</div>
 		<ul>
 			<li>
 				<strong>13:30 </strong>
@@ -837,30 +862,26 @@ test.onMouseMove = function(event) {
 	`;
 }
 
-// test.onMouseDown = function(event) {
-// 	var hitResult = project.hitTest(event.point, hitOptions);
+test.onMouseDown = function(event) {
+	var hitResult = project.hitTest(event.point, hitOptions);
 
-// 	// clean
-// 	for (let i = 0; i < paperPixels.length; i++) {
-// 		paperPixels[i].fillColor.alpha = 1;
-// 	}
+	// clean
+	for (let i = 0; i < paperPixels.length; i++) {
+		paperPixels[i].fillColor.alpha = 1;
+	}
 
-// 	if (!hitResult) {
-// 		return;
-// 	};
+	if (!hitResult) {
+		return;
+	};
 
-// 	let id = hitResult.item.userData.id;
+	let id = hitResult.item.userData.id;
 
-// 	// allPixels
-	
-// 	for (let i = 0; i < paperPixels.length; i++) {
-// 		if (!allPixels[id].paperPixels.includes(i)) {
-// 			paperPixels[i].fillColor.alpha = .2;
-// 		}
-// 	}
-// 	// OldfillColor
-// 	console.log(hitResult.item.userData.id);	
-// }
+	for (let i = 0; i < paperPixels.length; i++) {
+		if (!allPixels[id].paperPixels.includes(i)) {
+			paperPixels[i].fillColor.alpha = .2;
+		}
+	}
+}
 
 function calculateColorValues(round) {
 	let colors = allPixels[round].colors;
@@ -885,4 +906,16 @@ function calculateColorValues(round) {
   //   return item.date.getTime() >= fromDate.getTime() &&
   //          item.date.getTime() <= toDate.getTime();
 	// });
+}
+
+function addId() {
+	let itemId = 0;
+	
+	for (let i = 0; i < sortablePixels.length; i++) {
+		if (i % 600 === 0) {
+			itemId ++;
+		}
+
+		sortablePixels[i].push(itemId);
+	}
 }
