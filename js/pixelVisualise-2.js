@@ -829,34 +829,41 @@ test.onMouseMove = function(event) {
 		return;
 	};
 
+
+	var bardata = bars[hitResult.item.userData.id];
+
 	label.innerHTML = `
 		<h3>${hitResult.item.userData.title}</h3>
 		<div class="colors">
-			<span style="background-color: ${bars[hitResult.item.userData.id].colors[0]}"></span>
-			<span style="background-color: ${bars[hitResult.item.userData.id].colors[1]}"></span>
-			<span style="background-color: ${bars[hitResult.item.userData.id].colors[2]}"></span>
+			<span style="background-color: ${bardata.colors[0]}"></span>
+			<span style="background-color: ${bardata.colors[1]}"></span>
+			<span style="background-color: ${bardata.colors[2]}"></span>
 			<label>Meest opvallende kleuren</label>
 		</div>
 		<ul>
 			<li>
 				<strong>13:30 </strong>
-				<span> Bezoekers: ${bars[hitResult.item.userData.id].visitors[0].visitors}</span>
+				<span> Bezoekers: ${bardata.visitors[0].visitors}</span>
 			</li>
 			<li>
 				<strong>14:30 </strong>
-				<span> Bezoekers: ${bars[hitResult.item.userData.id].visitors[1].visitors}</span>
+				<span> Bezoekers: ${bardata.visitors[1].visitors}</span>
 			</li>
 			<li>
 				<strong>15:30 </strong>
-				<span> Bezoekers: ${bars[hitResult.item.userData.id].visitors[2].visitors}</span>
+				<span> Bezoekers: ${bardata.visitors[2].visitors}</span>
 			</li>
 			<li>
 				<strong>16:30 </strong>
-				<span> Bezoekers: ${bars[hitResult.item.userData.id].visitors[3].visitors}</span>
+				<span> Bezoekers: ${bardata.visitors[3].visitors}</span>
 			</li>
 			<li>
 				<strong>17:30 </strong>
-				<span> Bezoekers: ${bars[hitResult.item.userData.id].visitors[4].visitors}</span>
+				<span> Bezoekers: ${bardata.visitors[4].visitors}</span>
+			</li>
+			<li>
+				<strong>Totaal</strong>
+				<span> Bezoekers: ${bardata.visitors[0].visitors + bardata.visitors[1].visitors + bardata.visitors[2].visitors + bardata.visitors[3].visitors + bardata.visitors[4].visitors}</span>
 			</li>
 		</ul>
 	`;

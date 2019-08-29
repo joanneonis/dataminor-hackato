@@ -22,7 +22,7 @@ ul {
 li {
 	/* width: 300px; */
 	margin-right: 10px;
-	width: calc(100% / 4);
+	width: calc(100% / 5);
 }
 
 .container {
