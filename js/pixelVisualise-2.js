@@ -1,11 +1,13 @@
 let res = [30, 20];
 
+let selectedState = false;
+
 const bars = [
 	{
 		id: 0,
 		title: "Ben & Jerry’s",
 		capacity: 0,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#A2A39E', '#F6F6F6', '#75B4E3'],
 		visitors: [
 			{
 				time: '13:30',
@@ -33,7 +35,7 @@ const bars = [
 		id: 1,
 		title: "BierBoutique",
 		capacity: 51,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#2E2B2D', '#CABDB9', '#BEAF6D'],
 		visitors: [
 			{
 				time: '13:30',
@@ -61,7 +63,7 @@ const bars = [
 		id: 2,
 		title: "Cocosnoot Shoarma",
 		capacity: 16,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#F03C40', '#FAF5F0', '#D7AE79'],
 		visitors: [
 			{
 				time: '13:30',
@@ -89,7 +91,7 @@ const bars = [
 		id: 3,
 		title: "Switie",
 		capacity: 15,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#FA2622', '#B5B6BA', '#D2BDAA'],
 		visitors: [
 			{
 				time: '13:30',
@@ -117,7 +119,7 @@ const bars = [
 		id: 4,
 		title: "Het Eigendom",
 		capacity: 35,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#CB6069', '#EEECE1', '#CED5DB'],
 		visitors: [
 			{
 				time: '13:30',
@@ -145,7 +147,7 @@ const bars = [
 		id: 5,
 		title: "Warungmini",
 		capacity: 28,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#459960', '#D03B34', '#F0E9E1'],
 		visitors: [
 			{
 				time: '13:30',
@@ -173,7 +175,7 @@ const bars = [
 		id: 6,
 		title: "OPA",
 		capacity: 50,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#C5BDB4', '#BCD5C9', '#DDD5CB'],
 		visitors: [
 			{
 				time: '13:30',
@@ -201,7 +203,7 @@ const bars = [
 		id: 7,
 		title: "Jaffa shoarma",
 		capacity: 31,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#F8EF05', '#413A34', '#DED6CC'],
 		visitors: [
 			{
 				time: '13:30',
@@ -229,7 +231,7 @@ const bars = [
 		id: 8,
 		title: "Satebar",
 		capacity: 0,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#A0979A', '#617280', '#CCEEDC'],
 		visitors: [
 			{
 				time: '13:30',
@@ -257,7 +259,7 @@ const bars = [
 		id: 9,
 		title: "Wunderbar",
 		capacity: 65,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#488ED5', '#AE6E33', '#63C2C6'],
 		visitors: [
 			{
 				time: '13:30',
@@ -285,7 +287,7 @@ const bars = [
 		id: 10,
 		title: "Frietboutique",
 		capacity: 30,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#7D8EA5', '#C3D2E5', '#B7BCB8'],
 		visitors: [
 			{
 				time: '13:30',
@@ -313,7 +315,7 @@ const bars = [
 		id: 11,
 		title: "Termarsch & CO",
 		capacity: 0,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#465481', '#B7B1A3', '#C2AF70'],
 		visitors: [
 			{
 				time: '13:30',
@@ -341,7 +343,7 @@ const bars = [
 		id: 12,
 		title: "King Kong",
 		capacity: 52,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#DFDCD5', '#C85737', '#40372E'],
 		visitors: [
 			{
 				time: '13:30',
@@ -369,7 +371,7 @@ const bars = [
 		id: 13,
 		title: "NRC",
 		capacity: 52,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#979392', '#E6E0CD', '#2995B0'],
 		visitors: [
 			{
 				time: '13:30',
@@ -397,7 +399,7 @@ const bars = [
 		id: 14,
 		title: "De Witte Aap",
 		capacity: 63,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#2E3139', '#855D51', '#C2AE9F'],
 		visitors: [
 			{
 				time: '13:30',
@@ -425,7 +427,7 @@ const bars = [
 		id: 15,
 		title: "De Schouw",
 		capacity: 36,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#193938', '#C2AF98', '#2F9ADB'],
 		visitors: [
 			{
 				time: '13:30',
@@ -453,7 +455,7 @@ const bars = [
 		id: 16,
 		title: "Telaviv",
 		capacity: 12,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#868C8E', '#565656', '#1DA9E4'],
 		visitors: [
 			{
 				time: '13:30',
@@ -481,7 +483,7 @@ const bars = [
 		id: 17,
 		title: "De With",
 		capacity: 0,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#D03644', '#6F8C4A', '#C4A698'],
 		visitors: [
 			{
 				time: '13:30',
@@ -509,7 +511,7 @@ const bars = [
 		id: 18,
 		title: "Wagamama",
 		capacity: 94,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#545351', '#A1A6A3', '#E3AA83'],
 		visitors: [
 			{
 				time: '13:30',
@@ -537,7 +539,7 @@ const bars = [
 		id: 19,
 		title: "Zondebok & Zwarte schaap",
 		capacity: 90,
-		colors: ['#333', '#000', '#fff'],
+		colors: ['#D3D4CF', '#423933', '#7F8F3E'],
 		visitors: [
 			{
 				time: '13:30',
@@ -605,11 +607,11 @@ let paperPixels = [];
 function loadJSON(fileName, callback) {   
 	var xobj = new XMLHttpRequest();
 			xobj.overrideMimeType("application/json");
-	xobj.open('GET', fileName, true); // Replace 'my_data' with the path to your file
-	xobj.onreadystatechange = function () {
-				if (xobj.readyState == 4 && xobj.status == "200") {
-					// Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-					callback(xobj.responseText);
+			xobj.open('GET', fileName, true); // Replace 'my_data' with the path to your file
+			xobj.onreadystatechange = function () {
+						if (xobj.readyState == 4 && xobj.status == "200") {
+							// Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+							callback(xobj.responseText);
 				}
 	};
 	xobj.send(null);   
@@ -781,8 +783,9 @@ function bigAssRaster(count) {
 
 			paperPixels.push(dots[i]);
 
-			if (theRoundId < 19) { //! todo! 
-				allPixels[theRoundId].paperPixels.push(iAll);
+			console.log(theRoundId, allPixels.length);
+			if (theRoundId < 20) { //! todo! 
+				allPixels[theRoundId - 1].paperPixels.push(iAll);
 			} 
 
 			if (i === allPixels[round].colors.length - 1) {
@@ -824,57 +827,17 @@ var hitOptions = {
 // onMouseDown
 // onMouseMove
 test.onMouseMove = function(event) {
+	if (selectedState) return;
+
 	var hitResult = project.hitTest(event.point, hitOptions);
-	let label = document.querySelector('.current');
 
-	if (!hitResult) {
-		label.innerHTML = '';
-
-		return;
-	};
-
-
-	var bardata = bars[hitResult.item.userData.id];
-
-	label.innerHTML = `
-		<h3>${hitResult.item.userData.title}</h3>
-		<div class="colors">
-			<span style="background-color: ${bardata.colors[0]}"></span>
-			<span style="background-color: ${bardata.colors[1]}"></span>
-			<span style="background-color: ${bardata.colors[2]}"></span>
-			<label>Meest opvallende kleuren</label>
-		</div>
-		<ul>
-			<li>
-				<strong>13:30 </strong>
-				<span> Bezoekers: ${bardata.visitors[0].visitors}</span>
-			</li>
-			<li>
-				<strong>14:30 </strong>
-				<span> Bezoekers: ${bardata.visitors[1].visitors}</span>
-			</li>
-			<li>
-				<strong>15:30 </strong>
-				<span> Bezoekers: ${bardata.visitors[2].visitors}</span>
-			</li>
-			<li>
-				<strong>16:30 </strong>
-				<span> Bezoekers: ${bardata.visitors[3].visitors}</span>
-			</li>
-			<li>
-				<strong>17:30 </strong>
-				<span> Bezoekers: ${bardata.visitors[4].visitors}</span>
-			</li>
-			<li>
-				<strong>Totaal</strong>
-				<span> Bezoekers: ${bardata.visitors[0].visitors + bardata.visitors[1].visitors + bardata.visitors[2].visitors + bardata.visitors[3].visitors + bardata.visitors[4].visitors}</span>
-			</li>
-		</ul>
-	`;
+	updateInfo(hitResult);
 }
 
 test.onMouseDown = function(event) {
 	var hitResult = project.hitTest(event.point, hitOptions);
+
+	updateInfo(hitResult);
 
 	// clean
 	for (let i = 0; i < paperPixels.length; i++) {
@@ -882,11 +845,18 @@ test.onMouseDown = function(event) {
 	}
 
 	if (!hitResult) {
+		selectedState = false;
+		document.querySelector('.escape').classList.remove('active');
+		document.querySelector('.escape').classList.add('hidden');
 		return;
 	};
 
+	selectedState = true;
+	document.querySelector('.escape').classList.remove('hidden');
+	document.querySelector('.escape').classList.add('active');
+
 	let id = hitResult.item.userData.id;
-	console.log(allPixels[id].paperPixels);
+	console.log(allPixels[id].paperPixels, id);
 
 	for (let i = 0; i < paperPixels.length; i++) {
 		if (!allPixels[id].paperPixels.includes(i)) {
@@ -929,5 +899,81 @@ function addId() {
 		}
 
 		sortablePixels[i].push(itemId);
+
+		// super ugly im sorry
+		// if (itemId === 18) {
+		// 	sortablePixels[19].push(itemId);
+		// }
+	}
+}
+
+function updateInfo(hitResult) {
+	let label = document.querySelector('.current');
+
+	if (!hitResult) {
+		label.innerHTML = '';
+
+		return;
+	};
+
+	var bardata = bars[hitResult.item.userData.id];
+	// let bestTime = Math.max.apply(Math, bardata.visitors.map(function(o) { return o.time; }));
+
+
+
+	label.innerHTML = `
+		<h3>${hitResult.item.userData.title}</h3>
+		<div class="colors">
+			<span style="background-color: ${bardata.colors[0]}"></span>
+			<span style="background-color: ${bardata.colors[1]}"></span>
+			<span style="background-color: ${bardata.colors[2]}"></span>
+			<label>Meest opvallende kleuren</label>
+		</div>
+		<ul>
+			<li>
+				<strong>13:30 </strong>
+				<span> Bezoekers: ${bardata.visitors[0].visitors}</span>
+			</li>
+			<li>
+				<strong>14:30 </strong>
+				<span> Bezoekers: ${bardata.visitors[1].visitors}</span>
+			</li>
+			<li>
+				<strong>15:30 </strong>
+				<span> Bezoekers: ${bardata.visitors[2].visitors}</span>
+			</li>
+			<li>
+				<strong>16:30 </strong>
+				<span> Bezoekers: ${bardata.visitors[3].visitors}</span>
+			</li>
+			<li>
+				<strong>17:30 </strong>
+				<span> Bezoekers: ${bardata.visitors[4].visitors}</span>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<strong>Totaal</strong>
+				<span> Bezoekers: ${bardata.visitors[0].visitors + bardata.visitors[1].visitors + bardata.visitors[2].visitors + bardata.visitors[3].visitors + bardata.visitors[4].visitors}</span>
+			</li>
+			<li>
+				<strong>Drukste tijd</strong>
+				<span>
+					${bardata.visitors[bardata.visitors.map(e => e.visitors).reduce((iMax, x, i, arr) => x > arr[iMax] ? i : iMax, 0)].time}
+				</span>
+			</li>
+		</ul>
+	`;
+}
+
+document.onkeyup = function(event) {
+	if (event.key === "Escape" || event.key === "Enter"){
+		selectedState = false;
+		document.querySelector('.escape').classList.add('hidden');
+		document.querySelector('.escape').classList.remove('active');
+
+		for (let i = 0; i < paperPixels.length; i++) {
+			paperPixels[i].fillColor.alpha = 1;
+		}
 	}
 }

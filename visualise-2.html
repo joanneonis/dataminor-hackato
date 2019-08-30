@@ -13,16 +13,29 @@
 	<style>
 		.current {
 			position: fixed;
-			bottom: 30px;
+			bottom: 20px;
 		}
 	</style>
 </head>
 
 <body>
+	<div class="escape hidden">
+		<div>
+			<img src="./img/information.svg" alt="">
+		</div>
+		<span>
+			Druk op escape voor vrije selectie
+		</span>
+	</div>
 	<div class="container">
 		<div class="info">
 			<span>De kleuren van</span>
-			<h3>Witte de Withstraat</h3>
+			<h3>
+				Witte de Withstraat
+				<small>
+					(Klik op een pixel)
+				</small>
+			</h3>
 		</div>
 		<canvas id="canvas" resize></canvas>
 	
